@@ -18,7 +18,7 @@
 > Click :star:if you like the project. Pull Requests are highly appreciated.
 
 - ## [Javascript Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md)
-#### Table of Contents
+<!-- #### Table of Contents
 
 | No. | Questions |
 |---- | ---------
@@ -31,4 +31,4 @@
 |7  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#7-whats-the-output)
 |8  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#8-whats-the-output)
 |9  | [What happens when we do this?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#9-what-happens-when-we-do-this)
-|10 | [What is the difference between == and === operators ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#10-what-is-the-difference-between--and--operators-)
+|10 | [What is the difference between == and === operators ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#10-what-is-the-difference-between--and--operators-) -->
