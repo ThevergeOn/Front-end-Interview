@@ -23,12 +23,12 @@
 | No. | Questions |
 |---- | ---------
 |1  | [What is JavaScript?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md/#1-what-is-javascript)
-|2  | 
-|3  | 
-|4  | 
-|5  | 
-|6  | 
-|7  | 
-|8  | 
-|9  | 
-|10 | 
+|2  | [What are JavaScript Data Types?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#2-what-are-javascript-data-types)
+|3  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#3-whats-the-output)
+|4  | [What are the possible ways to create objects in JavaScript](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#4--what-are-the-possible-ways-to-create-objects-in-javascript)
+|5  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#5whats-the-output)
+|6  | [Which one is true?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#6which-one-is-true)
+|7  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#7-whats-the-output)
+|8  | [What's the output?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#8-whats-the-output)
+|9  | [What happens when we do this?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#9-what-happens-when-we-do-this)
+|10 | [What is the difference between == and === operators ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#10-what-is-the-difference-between--and--operators-)
