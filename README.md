@@ -13,4 +13,6 @@
 </p>
 </div>
 
+> Click :star:if you like the project. Pull Requests are highly appreciated.
+
 - ## [Javascript Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md)
