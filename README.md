@@ -22,7 +22,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [What is JavaScript?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md/#what-is-the-JavaScript)
+|1  | [What is JavaScript?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md/#1-what-is-javascript)
 |2  | 
 |3  | 
 |4  | 
