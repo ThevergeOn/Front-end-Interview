@@ -1,11 +1,6 @@
 <div align="center">
   <img height="60" src="https://img.icons8.com/color/344/javascript.png">
   <h2>JavaScript Questions</h2>
-  
----
-  
- Feel free to reach out to me! 😊 <br />
-<a href="https://www.instagram.com/thevergeon">Instagram</a> || <a href="https://www.twitter.com/thevergeon">Twitter</a> || <a href="https://www.linkedin.com/in/zahra-barghamadi">LinkedIn</a>
 </div>
 
 ### 1. What is JavaScript?
