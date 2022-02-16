@@ -232,7 +232,7 @@
    
 ---
 
-### 16.How do you redeclare variables in switch block without an error ?
+### 10.How do you redeclare variables in switch block without an error ?
 
    If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
    
@@ -267,7 +267,7 @@
    
 ---
 
-### 10.What is IIFE(Immediately Invoked Function Expression) ?
+<!-- ### 10.What is IIFE(Immediately Invoked Function Expression) ?
 
    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
 
@@ -294,7 +294,7 @@
    ```
    
 ---
-
+ -->
 <!-- ### 18.What is Hoisting ?
 
    Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
