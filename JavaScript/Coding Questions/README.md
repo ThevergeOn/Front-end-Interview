@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="60" src="https://img.icons8.com/color/344/javascript.png">
+  <img height="60" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-js-file-programming-and-coding-flatart-icons-outline-flatarticons-2.png"/>
   <h2>JavaScript Coding Questions</h2>
 </div>
 
@@ -232,6 +232,7 @@ At last, we invoke the `unshift` method on the `fruit` array, which modifies the
 
 </p>
 </details>
+
 ---
 
 ### 8.What's the output?
