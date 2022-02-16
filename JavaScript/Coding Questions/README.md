@@ -1,31 +1,9 @@
 <div align="center">
   <img height="60" src="https://img.icons8.com/color/344/javascript.png">
-  <h2>JavaScript Questions</h2>
+  <h2>JavaScript Coding Questions</h2>
 </div>
 
-### 1. What is JavaScript?
-  JavaScript is a client-side and server-side scripting language inserted into HTML pages and is understood by web browsers. JavaScript is also an Object-based Programming language.
-  
---- 
-  
-### 2. What are JavaScript Data Types?
-   ##### Primitive types
-   - Number
-   - String
-   - Boolean
-   - BigInt
-   - Undefined
-   - Null
-   - Symbol
-   ##### Non-primitive types
-   - Object
-     ```
-       Note- It is important to remember that any data type that is not primitive data type, is of Object type in javascript.
-     ```
-     
---- 
-
-### 3. What's the output?
+### 1. What's the output?
 
 ```javascript
 function sayHi() {
@@ -57,102 +35,7 @@ Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, do
 
 ---
 
-### 4.  What are the possible ways to create objects in JavaScript
-
-   There are many ways to create objects in javascript as below
-
-   1. **Object constructor:**
-
-      The simplest way to create an empty object is using the Object constructor. Currently this approach is not recommended.
-
-      ```javascript
-      var object = new Object();
-      ```
-
-   2. **Object's create method:**
-
-      The create method of Object creates a new object by passing the prototype object as a parameter
-
-      ```javascript
-      var object = Object.create(null);
-      ```
-
-   3. **Object literal syntax:**
-
-      The object literal syntax is equivalent to create method when it passes null as parameter
-
-      ```javascript
-      var object = {};
-      ```
-
-   4. **Function constructor:**
-
-      Create any function and apply the new operator to create object instances,
-
-      ```javascript
-      function Person(name){
-         this.name=name;
-         this.age=21;
-      }
-      var object = new Person("Sudheer");
-      ```
-
-   5. **Function constructor with prototype:**
-
-      This is similar to function constructor but it uses prototype for their properties and methods,
-
-      ```javascript
-      function Person(){}
-      Person.prototype.name = "Sudheer";
-      var object = new Person();
-      ```
-
-      This is equivalent to an instance created with an object create method with a function prototype and then call that function with an instance and parameters as arguments.
-
-      ```javascript
-      function func {};
-
-      new func(x, y, z);
-      ```
-
-      **(OR)**
-
-      ```javascript
-      // Create a new instance using function prototype.
-      var newInstance = Object.create(func.prototype)
-
-      // Call the function
-      var result = func.call(newInstance, x, y, z),
-
-      // If the result is a non-null object then use it otherwise just use the new instance.
-      console.log(result && typeof result === 'object' ? result : newInstance);
-      ```
-
-   6. **ES6 Class syntax:**
-
-      ES6 introduces class feature to create the objects
-
-      ```javascript
-      class Person {
-         constructor(name) {
-            this.name = name;
-         }
-      }
-
-      var object = new Person("Sudheer");
-      ```
-
-   7. **Singleton pattern:**
-
-      A Singleton is an object which can only be instantiated one time. Repeated calls to its constructor return the same instance and this way one can ensure that they don't accidentally create multiple instances.
-
-      ```javascript
-      var object = new function(){
-         this.name = "Sudheer";
-      }
-      ```
-
-### 5.What's the output?
+### 2.What's the output?
 
 ```javascript
 const shape = {
@@ -188,7 +71,7 @@ There is no value `radius` on that object, which returns `NaN`.
 
 ---
 
-### 6.Which one is true?
+### 3.Which one is true?
 
 ```javascript
 const bird = {
@@ -224,7 +107,7 @@ However, with dot notation, this doesn't happen. `mouse` does not have a key cal
 
 ---
 
-### 7. What's the output?
+### 4. What's the output?
 
 ```javascript
 let c = { greeting: 'Hey!' };
@@ -259,7 +142,7 @@ When you change one object, you change all of them.
 
 ---
 
-### 8. What's the output?
+### 5. What's the output?
 
 ```javascript
 let a = 3;
@@ -292,7 +175,7 @@ However, when we use the `===` operator, both value _and_ type should be the sam
 
 ---
 
-### 9. What happens when we do this?
+### 6. What happens when we do this?
 
 ```javascript
 function bark() {
@@ -321,227 +204,128 @@ A function is a special type of object. The code you write yourself isn't the ac
 
 ---
 
-### 10. What is the difference between == and === operators ?
+### 7. What's the output?
 
-   JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
-   1. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
-   2. Two numbers are strictly equal when they are numerically equal. i.e, Having the same number value.
-      There are two special cases in this,
-      1. NaN is not equal to anything, including NaN.
-      2. Positive and negative zeros are equal to one another.
-   3. Two Boolean operands are strictly equal if both are true or both are false.
-   4. Two objects are strictly equal if they refer to the same Object.
-   5. Null and Undefined types are not equal with ===, but equal with ==. i.e,
-       null===undefined --> false but null==undefined --> true
+```javascript
+const fruit = ['🍌', '🍊', '🍎']
 
-   Some of the example which covers the above cases,
+fruit.slice(0, 1)
+fruit.splice(0, 1)
+fruit.unshift('🍇')
 
-   ```javascript
-   0 == false   // true
-   0 === false  // false
-   1 == "1"     // true
-   1 === "1"    // false
-   null == undefined // true
-   null === undefined // false
-   '0' == false // true
-   '0' === false // false
-   []==[] or []===[] //false, refer different objects in memory
-   {}=={} or {}==={} //false, refer different objects in memory
-   ```
-   
+console.log(fruit)
+```
+
+- A: `['🍌', '🍊', '🍎']`
+- B: `['🍊', '🍎']`
+- C: `['🍇', '🍊', '🍎']`
+- D: `['🍇', '🍌', '🍊', '🍎']`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+First, we invoke the `slice` method on the fruit array. The slice method does not modify the original array, but returns the value that it sliced off the array: the banana emoji.
+Then, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`.
+At last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value, ‘🍇’ in this case,  as the first element in the array.  The fruit array now consists of `['🍇', '🍊', '🍎']`.
+
+</p>
+</details>
 ---
 
-### 11.What is a first class function ?
+### 8.What's the output?
 
-   In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+```javascript
+let greeting;
+greetign = {}; // Typo!
+console.log(greetign);
+```
 
-   For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+- A: `{}`
+- B: `ReferenceError: greetign is not defined`
+- C: `undefined`
 
-   ```javascript
-   const handler = () => console.log ('This is a click handler function');
-   document.addEventListener ('click', handler);
-   ```
+<details><summary><b>Answer</b></summary>
+<p>
 
-   
+#### Answer: A
+
+It logs the object, because we just created an empty object on the global object! When we mistyped `greeting` as `greetign`, the JS interpreter actually saw this as `global.greetign = {}` (or `window.greetign = {}` in a browser).
+
+In order to avoid this, we can use `"use strict"`. This makes sure that you have declared a variable before setting it equal to anything.
+
+</p>
+</details>
+
 ---
 
-### 12.What is a higher order function ?
-  
-   Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+### 9.What's the output?
 
-   ```javascript
-   const firstOrderFunc = () => console.log ('Hello, I am a First order function');
-   const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
-   higherOrder(firstOrderFunc);
-   ```
+```javascript
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
 
-   
+const member = new Person('Lydia', 'Hallie');
+Person.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+};
+
+console.log(member.getFullName());
+```
+
+- A: `TypeError`
+- B: `SyntaxError`
+- C: `Lydia Hallie`
+- D: `undefined` `undefined`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: A
+
+In JavaScript, functions are objects, and therefore, the method `getFullName` gets added to the constructor function object itself. For that reason, we can call `Person.getFullName()`, but `member.getFullName` throws a `TypeError`. 
+
+If you want a method to be available to all object instances, you have to add it to the prototype property:
+
+```js
+Person.prototype.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+};
+```
+
+</p>
+</details>
+
 ---
 
-### 13.What is the purpose of the let keyword ?
+### 10.What's the output?
 
-   The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
-    
-   Let's take an example to demonstrate the usage,
-   
-   ```javascript
-   let counter = 30;
-   if (counter === 30) {
-     let counter = 31;
-     console.log(counter); // 31
-   }
-   console.log(counter); // 30 (because the variable in if block won't exist here)
-   ```
+```javascript
+function sum(a, b) {
+  return a + b;
+}
 
-   
----
+sum(1, '2');
+```
 
-### 14.What is the difference between let and var ?
+- A: `NaN`
+- B: `TypeError`
+- C: `"12"`
+- D: `3`
 
-   You can list out the differences in a tabular format
-   
-   | var | let |
-   |---- | ---------
-   | It is been available from the beginning of JavaScript  | Introduced as part of ES6 |
-   | It has function scope | It has block scope  |
-   | Variables will be hoisted | Hoisted but not initialized |
+<details><summary><b>Answer</b></summary>
+<p>
 
-   Let's take an example to see the difference,
+#### Answer: C
 
-   ```javascript
-   function userDetails(username) {
-      if(username) {
-        console.log(salary); // undefined due to hoisting
-        console.log(age); // ReferenceError: Cannot access 'age' before initialization
-        let age = 30;
-        var salary = 10000;
-      }
-      console.log(salary); //10000 (accessible to due function scope)
-      console.log(age); //error: age is not defined(due to block scope)
-   }
-   userDetails('John');
-   ```
-   
----
+JavaScript is a **dynamically typed language**: we don't specify what types certain variables are. Values can automatically be converted into another type without you knowing, which is called _implicit type coercion_. **Coercion** is converting from one type into another.
 
-### 15.What is the reason to choose the name let as a keyword ?
+In this example, JavaScript converts the number `1` into a string, in order for the function to make sense and return a value. During the addition of a numeric type (`1`) and a string type (`'2'`), the number is treated as a string. We can concatenate strings like `"Hello" + "World"`, so what's happening here is `"1" + "2"` which returns `"12"`.
 
-   `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
+</p>
+</details>
 
-   
----
-
-### 16.How do you redeclare variables in switch block without an error ?
-
-   If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
-   
-   ```javascript
-   let counter = 1;
-   switch(x) {
-     case 0:
-       let name;
-       break;
-
-     case 1:
-       let name; // SyntaxError for redeclaration.
-       break;
-   }
-   ```
-
-   To avoid this error, you can create a nested block inside a case clause and create a new block scoped lexical environment.
-
-   ```javascript
-   let counter = 1;
-       switch(x) {
-        case 0: {
-           let name;
-           break;
-         }
-         case 1: {
-           let name; // No SyntaxError for redeclaration.
-           break;
-         }
-       }
-   ```
-   
----
-
-### 17.What is IIFE(Immediately Invoked Function Expression) ?
-
-   IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
-
-   ```javascript
-   (function ()
-       {
-         // logic here
-       }
-    )
-   ();
-   ```
-
-   The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
-   
-   ```javascript
-   (function ()
-           {
-             var message = "IIFE";
-             console.log(message);
-           }
-    )
-   ();
-   console.log(message); //Error: message is not defined
-   ```
-   
----
-
-### 18.What is Hoisting ?
-
-   Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
-   Let's take a simple example of variable hoisting,
-
-   ```javascript
-   console.log(message); //output : undefined
-   var message = 'The variable Has been hoisted';
-   ```
-
-   The above code looks like as below to the interpreter,
-
-   ```javascript
-   var message;
-   console.log(message);
-   message = 'The variable Has been hoisted';
-   ```
-   
----
-
-### 19.What are closures ?
-
-   A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
-    
-   1. Own scope where variables defined between its curly brackets
-   2. Outer function’s variables
-   3. Global variables
-    
-   Let's take an example of closure concept,
-
-   ```javascript
-   function Welcome(name){
-     var greetingInfo = function(message){
-      console.log(message+' '+name);
-     }
-   return greetingInfo;
-   }
-   var myFunction = Welcome('John');
-   myFunction('Welcome '); //Output: Welcome John
-   myFunction('Hello Mr.'); //output: Hello Mr.John
-   ```
-
-   As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
-   
----
-
-### 20.What are modules ?
-
-   Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
-      
 ---
