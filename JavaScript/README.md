@@ -25,39 +25,7 @@
      
 --- 
 
-### 3. What's the output?
-
-```javascript
-function sayHi() {
-  console.log(name);
-  console.log(age);
-  var name = 'Lydia';
-  let age = 21;
-}
-
-sayHi();
-```
-
-- A: `Lydia` and `undefined`
-- B: `Lydia` and `ReferenceError`
-- C: `ReferenceError` and `21`
-- D: `undefined` and `ReferenceError`
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: D
-
-Within the function, we first declare the `name` variable with the `var` keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of `undefined`, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the `name` variable, so it still holds the value of `undefined`.
-
-Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`.
-
-</p>
-</details>
-
----
-
-### 4.  What are the possible ways to create objects in JavaScript
+### 3.  What are the possible ways to create objects in JavaScript
 
    There are many ways to create objects in javascript as below
 
@@ -152,176 +120,9 @@ Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, do
       }
       ```
 
-### 5.What's the output?
-
-```javascript
-const shape = {
-  radius: 10,
-  diameter() {
-    return this.radius * 2;
-  },
-  perimeter: () => 2 * Math.PI * this.radius,
-};
-
-console.log(shape.diameter());
-console.log(shape.perimeter());
-```
-
-- A: `20` and `62.83185307179586`
-- B: `20` and `NaN`
-- C: `20` and `63`
-- D: `NaN` and `63`
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: B
-
-Note that the value of `diameter` is a regular function, whereas the value of `perimeter` is an arrow function.
-
-With arrow functions, the `this` keyword refers to its current surrounding scope, unlike regular functions! This means that when we call `perimeter`, it doesn't refer to the shape object, but to its surrounding scope (window for example).
-
-There is no value `radius` on that object, which returns `NaN`.
-
-</p>
-</details>
-
 ---
 
-### 6.Which one is true?
-
-```javascript
-const bird = {
-  size: 'small',
-};
-
-const mouse = {
-  name: 'Mickey',
-  small: true,
-};
-```
-
-- A: `mouse.bird.size` is not valid
-- B: `mouse[bird.size]` is not valid
-- C: `mouse[bird["size"]]` is not valid
-- D: All of them are valid
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: A
-
-In JavaScript, all object keys are strings (unless it's a Symbol). Even though we might not _type_ them as strings, they are always converted into strings under the hood.
-
-JavaScript interprets (or unboxes) statements. When we use bracket notation, it sees the first opening bracket `[` and keeps going until it finds the closing bracket `]`. Only then, it will evaluate the statement.
-
-`mouse[bird.size]`: First it evaluates `bird.size`, which is `"small"`. `mouse["small"]` returns `true`
-
-However, with dot notation, this doesn't happen. `mouse` does not have a key called `bird`, which means that `mouse.bird` is `undefined`. Then, we ask for the `size` using dot notation: `mouse.bird.size`. Since `mouse.bird` is `undefined`, we're actually asking `undefined.size`. This isn't valid, and will throw an error similar to `Cannot read property "size" of undefined`.
-
-</p>
-</details>
-
----
-
-### 7. What's the output?
-
-```javascript
-let c = { greeting: 'Hey!' };
-let d;
-
-d = c;
-c.greeting = 'Hello';
-console.log(d.greeting);
-```
-
-- A: `Hello`
-- B: `Hey!`
-- C: `undefined`
-- D: `ReferenceError`
-- E: `TypeError`
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: A
-
-In JavaScript, all objects interact by _reference_ when setting them equal to each other.
-
-First, variable `c` holds a value to an object. Later, we assign `d` with the same reference that `c` has to the object.
-
-<img src="https://i.imgur.com/ko5k0fs.png" width="200">
-
-When you change one object, you change all of them.
-
-</p>
-</details>
-
----
-
-### 8. What's the output?
-
-```javascript
-let a = 3;
-let b = new Number(3);
-let c = 3;
-
-console.log(a == b);
-console.log(a === b);
-console.log(b === c);
-```
-
-- A: `true` `false` `true`
-- B: `false` `false` `true`
-- C: `true` `false` `false`
-- D: `false` `true` `true`
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: C
-
-`new Number()` is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object.
-
-When we use the `==` operator, it only checks whether it has the same _value_. They both have the value of `3`, so it returns `true`.
-
-However, when we use the `===` operator, both value _and_ type should be the same. It's not: `new Number()` is not a number, it's an **object**. Both return `false.`
-
-</p>
-</details>
-
----
-
-### 9. What happens when we do this?
-
-```javascript
-function bark() {
-  console.log('Woof!');
-}
-
-bark.animal = 'dog';
-```
-
-- A: Nothing, this is totally fine!
-- B: `SyntaxError`. You cannot add properties to a function this way.
-- C: `"Woof"` gets logged.
-- D: `ReferenceError`
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: A
-
-This is possible in JavaScript, because functions are objects! (Everything besides primitive types are objects)
-
-A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with properties. This property is invocable.
-
-</p>
-</details>
-
----
-
-### 10. What is the difference between == and === operators ?
+### 4. What is the difference between == and === operators ?
 
    JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
    1. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
@@ -351,7 +152,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 11.What is a first class function ?
+### 5.What is a first class function ?
 
    In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
 
@@ -365,7 +166,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 12.What is a higher order function ?
+### 6.What is a higher order function ?
   
    Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
 
@@ -378,7 +179,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 13.What is the purpose of the let keyword ?
+### 7.What is the purpose of the let keyword ?
 
    The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
     
@@ -396,7 +197,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 14.What is the difference between let and var ?
+### 8.What is the difference between let and var ?
 
    You can list out the differences in a tabular format
    
@@ -424,7 +225,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 15.What is the reason to choose the name let as a keyword ?
+### 9.What is the reason to choose the name let as a keyword ?
 
    `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
 
@@ -466,7 +267,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 17.What is IIFE(Immediately Invoked Function Expression) ?
+### 10.What is IIFE(Immediately Invoked Function Expression) ?
 
    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
 
@@ -494,7 +295,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 18.What is Hoisting ?
+<!-- ### 18.What is Hoisting ?
 
    Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
    Let's take a simple example of variable hoisting,
@@ -544,4 +345,4 @@ A function is a special type of object. The code you write yourself isn't the ac
 
    Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
       
----
+--- -->
