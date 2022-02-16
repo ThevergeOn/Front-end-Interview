@@ -348,3 +348,193 @@ A function is a special type of object. The code you write yourself isn't the ac
    []==[] or []===[] //false, refer different objects in memory
    {}=={} or {}==={} //false, refer different objects in memory
    ```
+   
+---
+
+### 11.What is a first class function
+
+   In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+
+   For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+
+   ```javascript
+   const handler = () => console.log ('This is a click handler function');
+   document.addEventListener ('click', handler);
+   ```
+
+   
+---
+
+### 12.What is a higher order function
+  
+   Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+
+   ```javascript
+   const firstOrderFunc = () => console.log ('Hello, I am a First order function');
+   const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
+   higherOrder(firstOrderFunc);
+   ```
+
+   
+---
+
+### 13.What is the purpose of the let keyword
+
+   The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
+    
+   Let's take an example to demonstrate the usage,
+   
+   ```javascript
+   let counter = 30;
+   if (counter === 30) {
+     let counter = 31;
+     console.log(counter); // 31
+   }
+   console.log(counter); // 30 (because the variable in if block won't exist here)
+   ```
+
+   
+---
+
+### 14.What is the difference between let and var
+
+   You can list out the differences in a tabular format
+   
+   | var | let |
+   |---- | ---------
+   | It is been available from the beginning of JavaScript  | Introduced as part of ES6 |
+   | It has function scope | It has block scope  |
+   | Variables will be hoisted | Hoisted but not initialized |
+
+   Let's take an example to see the difference,
+
+   ```javascript
+   function userDetails(username) {
+      if(username) {
+        console.log(salary); // undefined due to hoisting
+        console.log(age); // ReferenceError: Cannot access 'age' before initialization
+        let age = 30;
+        var salary = 10000;
+      }
+      console.log(salary); //10000 (accessible to due function scope)
+      console.log(age); //error: age is not defined(due to block scope)
+   }
+   userDetails('John');
+   ```
+   
+---
+
+### 15.What is the reason to choose the name let as a keyword
+
+   `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
+
+   
+---
+
+### 16.How do you redeclare variables in switch block without an error
+
+   If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
+   
+   ```javascript
+   let counter = 1;
+   switch(x) {
+     case 0:
+       let name;
+       break;
+
+     case 1:
+       let name; // SyntaxError for redeclaration.
+       break;
+   }
+   ```
+
+   To avoid this error, you can create a nested block inside a case clause and create a new block scoped lexical environment.
+
+   ```javascript
+   let counter = 1;
+       switch(x) {
+        case 0: {
+           let name;
+           break;
+         }
+         case 1: {
+           let name; // No SyntaxError for redeclaration.
+           break;
+         }
+       }
+   ```
+   
+---
+
+### 17.What is IIFE(Immediately Invoked Function Expression)
+
+   IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
+
+   ```javascript
+   (function ()
+       {
+         // logic here
+       }
+    )
+   ();
+   ```
+
+   The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+   
+   ```javascript
+   (function ()
+           {
+             var message = "IIFE";
+             console.log(message);
+           }
+    )
+   ();
+   console.log(message); //Error: message is not defined
+   ```
+   
+---
+
+### 18.What is Hoisting
+
+   Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
+   Let's take a simple example of variable hoisting,
+
+   ```javascript
+   console.log(message); //output : undefined
+   var message = 'The variable Has been hoisted';
+   ```
+
+   The above code looks like as below to the interpreter,
+
+   ```javascript
+   var message;
+   console.log(message);
+   message = 'The variable Has been hoisted';
+   ```
+   
+---
+
+### 19.
+   Let's take an example of closure concept,
+
+   ```javascript
+   function Welcome(name){
+     var greetingInfo = function(message){
+      console.log(message+' '+name);
+     }
+   return greetingInfo;
+   }
+   var myFunction = Welcome('John');
+   myFunction('Welcome '); //Output: Welcome John
+   myFunction('Hello Mr.'); //output: Hello Mr.John
+   ```
+
+   As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
+   
+---
+
+### 20.What are modules
+
+   Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
+      
+---
