@@ -17,10 +17,10 @@
 
 > Click :star:if you like the project. Pull Requests are highly appreciated.
 
-- ## [Javascript Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md)
- #### Table of Contents
+- # [Javascript Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md)
+ ### Table of Contents
  
-- [Coding Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/Coding%20Questions/README.md)
+- #### [Coding Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/Coding%20Questions/README.md)
 
 | No. | Questions |
 |---- | ---------
