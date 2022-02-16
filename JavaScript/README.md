@@ -351,7 +351,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 11.What is a first class function
+### 11.What is a first class function ?
 
    In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
 
@@ -365,7 +365,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 12.What is a higher order function
+### 12.What is a higher order function ?
   
    Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
 
@@ -378,7 +378,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 13.What is the purpose of the let keyword
+### 13.What is the purpose of the let keyword ?
 
    The `let` statement declares a **block scope local variable**. Hence the variables defined with let keyword are limited in scope to the block, statement, or expression on which it is used. Whereas variables declared with the `var` keyword used to define a variable globally, or locally to an entire function regardless of block scope.
     
@@ -396,7 +396,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 14.What is the difference between let and var
+### 14.What is the difference between let and var ?
 
    You can list out the differences in a tabular format
    
@@ -424,14 +424,14 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 15.What is the reason to choose the name let as a keyword
+### 15.What is the reason to choose the name let as a keyword ?
 
    `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
 
    
 ---
 
-### 16.How do you redeclare variables in switch block without an error
+### 16.How do you redeclare variables in switch block without an error ?
 
    If you try to redeclare variables in a `switch block` then it will cause errors because there is only one block. For example, the below code block throws a syntax error as below,
    
@@ -466,7 +466,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 17.What is IIFE(Immediately Invoked Function Expression)
+### 17.What is IIFE(Immediately Invoked Function Expression) ?
 
    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
 
@@ -494,7 +494,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 18.What is Hoisting
+### 18.What is Hoisting ?
 
    Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
    Let's take a simple example of variable hoisting,
@@ -514,7 +514,14 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 19.
+### 19.What are closures ?
+
+   A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+    
+   1. Own scope where variables defined between its curly brackets
+   2. Outer function’s variables
+   3. Global variables
+    
    Let's take an example of closure concept,
 
    ```javascript
@@ -533,7 +540,7 @@ A function is a special type of object. The code you write yourself isn't the ac
    
 ---
 
-### 20.What are modules
+### 20.What are modules ?
 
    Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
       
