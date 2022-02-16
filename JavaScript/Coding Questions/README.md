@@ -3,7 +3,7 @@
   <h2>JavaScript Coding Questions</h2>
 </div>
 
-### 1. What's the output?
+### 1. What's the output ?
 
 ```javascript
 function sayHi() {
@@ -35,7 +35,7 @@ Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, do
 
 ---
 
-### 2.What's the output?
+### 2.What's the output ?
 
 ```javascript
 const shape = {
@@ -71,7 +71,7 @@ There is no value `radius` on that object, which returns `NaN`.
 
 ---
 
-### 3.Which one is true?
+### 3.Which one is true ?
 
 ```javascript
 const bird = {
@@ -107,7 +107,7 @@ However, with dot notation, this doesn't happen. `mouse` does not have a key cal
 
 ---
 
-### 4. What's the output?
+### 4. What's the output ?
 
 ```javascript
 let c = { greeting: 'Hey!' };
@@ -142,7 +142,7 @@ When you change one object, you change all of them.
 
 ---
 
-### 5. What's the output?
+### 5. What's the output ?
 
 ```javascript
 let a = 3;
@@ -175,7 +175,7 @@ However, when we use the `===` operator, both value _and_ type should be the sam
 
 ---
 
-### 6. What happens when we do this?
+### 6. What happens when we do this ?
 
 ```javascript
 function bark() {
@@ -204,7 +204,7 @@ A function is a special type of object. The code you write yourself isn't the ac
 
 ---
 
-### 7. What's the output?
+### 7. What's the output ?
 
 ```javascript
 const fruit = ['🍌', '🍊', '🍎']
@@ -235,7 +235,7 @@ At last, we invoke the `unshift` method on the `fruit` array, which modifies the
 
 ---
 
-### 8.What's the output?
+### 8.What's the output ?
 
 ```javascript
 let greeting;
@@ -261,7 +261,7 @@ In order to avoid this, we can use `"use strict"`. This makes sure that you have
 
 ---
 
-### 9.What's the output?
+### 9.What's the output ?
 
 ```javascript
 function Person(firstName, lastName) {
@@ -302,7 +302,7 @@ Person.prototype.getFullName = function() {
 
 ---
 
-### 10.What's the output?
+### 10.What's the output ?
 
 ```javascript
 function sum(a, b) {
