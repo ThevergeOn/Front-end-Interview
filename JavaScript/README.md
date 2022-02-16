@@ -2,6 +2,7 @@
   <img height="60" src="https://img.icons8.com/color/344/javascript.png">
   <h2>JavaScript Questions</h2>
 </div>
+
 - # [Coding Questions](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/Coding%20Questions/README.md)
 
 ### 1. What is JavaScript?
