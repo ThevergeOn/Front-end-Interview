@@ -349,7 +349,7 @@
 
 ---
 
-### 14.Why do you need modules ?
+### 15.Why do you need modules ?
 
    Below are the list of benefits using modules in javascript ecosystem
    1. Maintainability
