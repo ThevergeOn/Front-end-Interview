@@ -35,3 +35,13 @@
 |8  | [What is the difference between let and var ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#8what-is-the-difference-between-let-and-var-)
 |9  | [What is the reason to choose the name let as a keyword ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#9what-is-the-reason-to-choose-the-name-let-as-a-keyword-)
 |10 | [How do you redeclare variables in switch block without an error ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#10how-do-you-redeclare-variables-in-switch-block-without-an-error-)
+|11 | [What is IIFE(Immediately Invoked Function Expression) ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#11what-is-iifeimmediately-invoked-function-expression-)
+|12 | [What is Hoisting ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#12what-is-hoisting-)
+|13 | [What are closures?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#13what-are-closures-)
+|14 | [What are modules ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#14what-are-modules-)
+|15 | [Why do you need modules ?](https://github.com/ThevergeOn/Front-end-Interview/blob/main/JavaScript/README.md#15why-do-you-need-modules-)
+<!-- |16 | []()
+|17 | []()
+|18 | []()
+|19 | []() -->
+|20 | []()
