@@ -330,3 +330,149 @@ In this example, JavaScript converts the number `1` into a string, in order for 
 </details>
 
 ---
+
+### 11.What's the output?
+
+```javascript
+let number = 0;
+console.log(number++);
+console.log(++number);
+console.log(number);
+```
+
+- A: `1` `1` `2`
+- B: `1` `2` `2`
+- C: `0` `2` `2`
+- D: `0` `1` `2`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+The **postfix** unary operator `++`:
+
+1. Returns the value (this returns `0`)
+2. Increments the value (number is now `1`)
+
+The **prefix** unary operator `++`:
+
+1. Increments the value (number is now `2`)
+2. Returns the value (this returns `2`)
+
+This returns `0 2 2`.
+
+</p>
+</details>
+
+---
+### 12.What's the output?
+
+```javascript
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const person = 'Lydia';
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`;
+```
+
+- A: `"Lydia"` `21` `["", " is ", " years old"]`
+- B: `["", " is ", " years old"]` `"Lydia"` `21`
+- C: `"Lydia"` `["", " is ", " years old"]` `21`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+If you use tagged template literals, the value of the first argument is always an array of the string values. The remaining arguments get the values of the passed expressions!
+
+</p>
+</details>
+
+---
+### 13.What's the output?
+
+```javascript
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+
+getAge();
+```
+
+- A: `21`
+- B: `undefined`
+- C: `ReferenceError`
+- D: `TypeError`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+With `"use strict"`, you can make sure that you don't accidentally declare global variables. We never declared the variable `age`, and since we use `"use strict"`, it will throw a reference error. If we didn't use `"use strict"`, it would have worked, since the property `age` would have gotten added to the global object.
+
+</p>
+</details>
+
+---
+
+### 14.What's the output?
+
+```javascript
+var num = 8;
+var num = 10;
+
+console.log(num);
+```
+
+- A: `8`
+- B: `10`
+- C: `SyntaxError`
+- D: `ReferenceError`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+With the `var` keyword, you can declare multiple variables with the same name. The variable will then hold the latest value.
+
+You cannot do this with `let` or `const` since they're block-scoped.
+
+</p>
+</details>
+
+---
+
+### 15.What's the output?
+
+```javascript
+const obj = { a: 'one', b: 'two', a: 'three' };
+console.log(obj);
+```
+
+- A: `{ a: "one", b: "two" }`
+- B: `{ b: "two", a: "three" }`
+- C: `{ a: "three", b: "two" }`
+- D: `SyntaxError`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+If you have two keys with the same name, the key will be replaced. It will still be in its first position, but with the last specified value.
+
+</p>
+</details>
+
+---
