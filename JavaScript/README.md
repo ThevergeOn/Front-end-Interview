@@ -343,34 +343,15 @@
    
 ---
 
-### 14.What are closures?
-
-   A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
-    
-   1. Own scope where variables defined between its curly brackets
-   2. Outer function’s variables
-   3. Global variables
-    
-   Let's take an example of closure concept,
-   
-   ```javascript
-   function Welcome(name){
-     var greetingInfo = function(message){
-      console.log(message+' '+name);
-     }
-   return greetingInfo;
-   }
-   var myFunction = Welcome('John');
-   myFunction('Welcome '); //Output: Welcome John
-   myFunction('Hello Mr.'); //output: Hello Mr.John
-   ```
-   
-   As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
-
----
-
-### 15.What are modules
+### 14.What are modules ?
 
    Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
 
 ---
+
+### 14.Why do you need modules ?
+
+   Below are the list of benefits using modules in javascript ecosystem
+   1. Maintainability
+   2. Reusability
+   3. Namespacing
