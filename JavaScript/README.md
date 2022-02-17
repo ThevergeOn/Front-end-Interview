@@ -269,7 +269,7 @@
    
 ---
 
-<!-- ### 10.What is IIFE(Immediately Invoked Function Expression) ?
+ ### 11.What is IIFE(Immediately Invoked Function Expression) ?
 
    IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. The signature of it would be as below,
 
@@ -296,8 +296,8 @@
    ```
    
 ---
- -->
-<!-- ### 18.What is Hoisting ?
+ 
+ ### 12.What is Hoisting ?
 
    Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation.
    Let's take a simple example of variable hoisting,
@@ -317,7 +317,7 @@
    
 ---
 
-### 19.What are closures ?
+### 13.What are closures ?
 
    A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
     
@@ -343,8 +343,31 @@
    
 ---
 
-### 20.What are modules ?
+### 14.What are closures?
+
+   A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+    
+   1. Own scope where variables defined between its curly brackets
+   2. Outer function’s variables
+   3. Global variables
+    
+   Let's take an example of closure concept,
+   
+   ```javascript
+   function Welcome(name){
+     var greetingInfo = function(message){
+      console.log(message+' '+name);
+     }
+   return greetingInfo;
+   }
+   var myFunction = Welcome('John');
+   myFunction('Welcome '); //Output: Welcome John
+   myFunction('Hello Mr.'); //output: Hello Mr.John
+   ```
+   
+   As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
+---
+
+### 15.What are modules
 
    Modules refer to small units of independent, reusable code and also act as the foundation of many JavaScript design patterns.  Most of the JavaScript modules export an object literal, a function, or a constructor
-      
---- -->
