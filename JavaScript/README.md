@@ -355,3 +355,70 @@
    1. Maintainability
    2. Reusability
    3. Namespacing
+   
+---
+
+### 16. What is scope in javascript ?
+
+   Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
+
+---
+
+### 17.Why do you need strict mode ?
+
+   Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
+
+---
+
+### 18.How do you declare strict mode ?
+
+   The strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+    If declared at the beginning of a script, it has global scope.
+
+  ```javascript
+  "use strict";
+  x = 3.14; // This will cause an error because x is not declared
+  ```
+
+   and if you declare inside a function, it has local scope
+   
+   ```javascript
+   x = 3.14;       // This will not cause an error.
+   myFunction();
+
+   function myFunction() {
+     "use strict";
+     y = 3.14;   // This will cause an error
+   }
+   ```
+
+
+---
+
+### 19.What is the typeof operator ?
+
+   You can use the JavaScript typeof operator to find the type of a JavaScript variable. It returns the type of a variable or an expression.
+
+   ```javascript
+   typeof "John Abraham"     // Returns "string"
+   typeof (1 + 2)        // Returns "number"
+   ```
+
+---
+
+### 20.What is undefined property ?
+
+   The undefined property indicates that a variable has not been assigned a value, or not declared at all. The type of undefined value is undefined too.
+
+   ```javascript
+   var user;    // Value is undefined, type is undefined
+   console.log(typeof(user)) //undefined
+   ```
+
+   Any variable can be emptied by setting the value to undefined.
+
+   ```javascript
+   user = undefined
+   ```
+
+---
