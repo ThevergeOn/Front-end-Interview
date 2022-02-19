@@ -476,3 +476,172 @@ If you have two keys with the same name, the key will be replaced. It will still
 </details>
 
 ---
+
+### 16.What's the output?
+
+```javascript
+for (let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+```
+
+- A: `1` `2`
+- B: `1` `2` `3`
+- C: `1` `2` `4`
+- D: `1` `3` `4`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+The `continue` statement skips an iteration if a certain condition returns `true`.
+
+</p>
+</details>
+
+---
+
+### 17.What's the output?
+
+```javascript
+const a = {};
+const b = { key: 'b' };
+const c = { key: 'c' };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+```
+
+- A: `123`
+- B: `456`
+- C: `undefined`
+- D: `ReferenceError`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+Object keys are automatically converted into strings. We are trying to set an object as a key to object `a`, with the value of `123`.
+
+However, when we stringify an object, it becomes `"[object Object]"`. So what we are saying here, is that `a["[object Object]"] = 123`. Then, we can try to do the same again. `c` is another object that we are implicitly stringifying. So then, `a["[object Object]"] = 456`.
+
+Then, we log `a[b]`, which is actually `a["[object Object]"]`. We just set that to `456`, so it returns `456`.
+
+</p>
+</details>
+
+---
+
+### 18.What's the output?
+
+```javascript
+const foo = () => console.log('First');
+const bar = () => setTimeout(() => console.log('Second'));
+const baz = () => console.log('Third');
+
+bar();
+foo();
+baz();
+```
+
+- A: `First` `Second` `Third`
+- B: `First` `Third` `Second`
+- C: `Second` `First` `Third`
+- D: `Second` `Third` `First`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+We have a `setTimeout` function and invoked it first. Yet, it was logged last.
+
+This is because in browsers, we don't just have the runtime engine, we also have something called a `WebAPI`. The `WebAPI` gives us the `setTimeout` function to start with, and for example the DOM.
+
+After the _callback_ is pushed to the WebAPI, the `setTimeout` function itself (but not the callback!) is popped off the stack.
+
+<img src="https://i.imgur.com/X5wsHOg.png" width="200">
+
+Now, `foo` gets invoked, and `"First"` is being logged.
+
+<img src="https://i.imgur.com/Pvc0dGq.png" width="200">
+
+`foo` is popped off the stack, and `baz` gets invoked. `"Third"` gets logged.
+
+<img src="https://i.imgur.com/WhA2bCP.png" width="200">
+
+The WebAPI can't just add stuff to the stack whenever it's ready. Instead, it pushes the callback function to something called the _queue_.
+
+<img src="https://i.imgur.com/NSnDZmU.png" width="200">
+
+This is where an event loop starts to work. An **event loop** looks at the stack and task queue. If the stack is empty, it takes the first thing on the queue and pushes it onto the stack.
+
+<img src="https://i.imgur.com/uyiScAI.png" width="200">
+
+`bar` gets invoked, `"Second"` gets logged, and it's popped off the stack.
+
+</p>
+</details>
+
+---
+
+### 19.When you click the paragraph, what's the logged output?
+
+```html
+<div onclick="console.log('div')">
+  <p onclick="console.log('p')">
+    Click here!
+  </p>
+</div>
+```
+
+- A: `p` `div`
+- B: `div` `p`
+- C: `p`
+- D: `div`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: A
+
+If we click `p`, we see two logs: `p` and `div`. During event propagation, there are 3 phases: capturing, target, and bubbling. By default, event handlers are executed in the bubbling phase (unless you set `useCapture` to `true`). It goes from the deepest nested element outwards.
+
+</p>
+</details>
+
+---
+
+### 20.What's the output?
+
+```javascript
+function sayHi() {
+  return (() => 0)();
+}
+
+console.log(typeof sayHi());
+```
+
+- A: `"object"`
+- B: `"number"`
+- C: `"function"`
+- D: `"undefined"`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+The `sayHi` function returns the returned value of the immediately invoked function expression (IIFE). This function returned `0`, which is type `"number"`.
+
+FYI: there are only 7 built-in types: `null`, `undefined`, `boolean`, `number`, `string`, `object`, and `symbol`. `"function"` is not a type, since functions are objects, it's of type `"object"`.
+
+</p>
+</details>
+
+---
