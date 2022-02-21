@@ -422,3 +422,66 @@
    ```
 
 ---
+
+### 21.What is undefined property ?
+
+   The undefined property indicates that a variable has not been assigned a value, or not declared at all. The type of undefined value is undefined too.
+
+   ```javascript
+   var user;    // Value is undefined, type is undefined
+   console.log(typeof(user)) //undefined
+   ```
+
+   Any variable can be emptied by setting the value to undefined.
+   
+   ```javascript
+   user = undefined
+   ```
+---
+   
+   ### 22.What is null value ?
+
+   The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values. The type of null value is object.
+   You can empty the variable by setting the value to null.
+
+   ```javascript
+   var user = null;
+   console.log(typeof(user)) //object
+   ```
+---
+
+   ### 23.What is the difference between null and undefined
+
+   Below are the main differences between null and undefined,
+
+   | Null | Undefined |
+   |---- | -----------|
+   | It is an assignment value which indicates that variable points to no object.  | It is not an assignment value where a variable has been declared but has not yet been assigned a value. |
+   | Type of null is object | Type of undefined is undefined  |
+   | The null value is a primitive value that represents the null, empty, or non-existent reference. | The undefined value is a primitive value used when a variable has not been assigned a value.|
+   | Indicates the absence of a value for a variable | Indicates absence of variable itself |
+   | Converted to zero (0) while performing primitive operations | Converted to NaN while performing primitive operations |
+
+---
+      
+   ### 24.What is isNaN ?
+
+    The isNaN() function is used to determine whether a value is an illegal number (Not-a-Number) or not. i.e, This function returns true if the value equates to NaN. Otherwise it returns false.
+
+    ```javascript
+    isNaN('Hello') //true
+    isNaN('100') //false
+    ```
+---
+
+   ### 25.What are the differences between undeclared and undefined variables ?
+
+   Below are the major differences between undeclared and undefined variables,
+
+   | undeclared | undefined |
+   |---- | ---------
+   | These variables do not exist in a program and are not declared  | These variables declared in the program but have not assigned any value |
+   | If you try to read the value of an undeclared variable, then a runtime error is encountered | If you try to read the value of an undefined variable, an undefined value is returned.  |
+   
+---
+   
