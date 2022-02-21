@@ -645,3 +645,164 @@ FYI: there are only 7 built-in types: `null`, `undefined`, `boolean`, `number`, 
 </details>
 
 ---
+
+### 21.What's the output?
+
+```javascript
+console.log(typeof typeof 1);
+```
+
+- A: `"number"`
+- B: `"string"`
+- C: `"object"`
+- D: `"undefined"`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+`typeof 1` returns `"number"`.
+`typeof "number"` returns `"string"`
+
+</p>
+</details>
+
+---
+
+### 22.What's the output?
+
+```javascript
+const numbers = [1, 2, 3];
+numbers[10] = 11;
+console.log(numbers);
+```
+
+- A: `[1, 2, 3, 7 x null, 11]`
+- B: `[1, 2, 3, 11]`
+- C: `[1, 2, 3, 7 x empty, 11]`
+- D: `SyntaxError`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+When you set a value to an element in an array that exceeds the length of the array, JavaScript creates something called "empty slots". These actually have the value of `undefined`, but you will see something like:
+
+`[1, 2, 3, 7 x empty, 11]`
+
+depending on where you run it (it's different for every browser, node, etc.)
+
+</p>
+</details>
+
+---
+
+### 23.What's the output?
+
+```javascript
+let person = { name: 'Lydia' };
+const members = [person];
+person = null;
+
+console.log(members);
+```
+
+- A: `null`
+- B: `[null]`
+- C: `[{}]`
+- D: `[{ name: "Lydia" }]`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: D
+
+First, we declare a variable `person` with the value of an object that has a `name` property.
+
+<img src="https://i.imgur.com/TML1MbS.png" width="200">
+
+Then, we declare a variable called `members`. We set the first element of that array equal to the value of the `person` variable. Objects interact by _reference_ when setting them equal to each other. When you assign a reference from one variable to another, you make a _copy_ of that reference. (note that they don't have the _same_ reference!)
+
+<img src="https://i.imgur.com/FSG5K3F.png" width="300">
+
+Then, we set the variable `person` equal to `null`.
+
+<img src="https://i.imgur.com/sYjcsMT.png" width="300">
+
+We are only modifying the value of the `person` variable, and not the first element in the array, since that element has a different (copied) reference to the object. The first element in `members` still holds its reference to the original object. When we log the `members` array, the first element still holds the value of the object, which gets logged.
+
+</p>
+</details>
+
+---
+
+### 24.What's the output?
+
+```javascript
+console.log(3 + 4 + '5');
+```
+
+- A: `"345"`
+- B: `"75"`
+- C: `12`
+- D: `"12"`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+Operator associativity is the order in which the compiler evaluates the expressions, either left-to-right or right-to-left. This only happens if all operators have the _same_ precedence. We only have one type of operator: `+`. For addition, the associativity is left-to-right.
+
+`3 + 4` gets evaluated first. This results in the number `7`.
+
+`7 + '5'` results in `"75"` because of coercion. JavaScript converts the number `7` into a string, see question 15. We can concatenate two strings using the `+`operator. `"7" + "5"` results in `"75"`.
+
+</p>
+</details>
+
+---
+
+### 25.What's the output?
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const [y] = numbers;
+
+console.log(y);
+```
+
+- A: `[[1, 2, 3, 4, 5]]`
+- B: `[1, 2, 3, 4, 5]`
+- C: `1`
+- D: `[1]`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+We can unpack values from arrays or properties from objects through destructuring. For example:
+
+```javascript
+[a, b] = [1, 2];
+```
+
+<img src="https://i.imgur.com/ADFpVop.png" width="200">
+
+The value of `a` is now `1`, and the value of `b` is now `2`. What we actually did in the question, is:
+
+```javascript
+[y] = [1, 2, 3, 4, 5];
+```
+
+<img src="https://i.imgur.com/NzGkMNk.png" width="200">
+
+This means that the value of `y` is equal to the first value in the array, which is the number `1`. When we log `y`, `1` is returned.
+
+</p>
+</details>
+
+---
